@@ -23,7 +23,9 @@ const display = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'http://localhost:3000'
+),
   title: { default: 'GiftsByRashii — Gifts that feel made for them', template: '%s | GiftsByRashii' },
   description: 'Thoughtful gifts, personalised hampers and joyful surprises for every person and occasion.',
   openGraph: { title: 'GiftsByRashii — Gifts that feel made for them', description: 'Thoughtful gifts, personalised hampers and joyful surprises for every person and occasion.', images: ['/og.png'], type: 'website' },
