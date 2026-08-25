@@ -3,8 +3,13 @@ import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import './globals.css';
 import './extended.css';
 import './admin.css';
+import './admin-modern.css';
+import './storefront-modern.css';
+import './config-studio.css';
+import './json-free-ui.css';
 import './responsive.css';
 import { CartProvider } from '@/components/cart-provider';
+import { ThemeStyle } from '@/components/theme-style';
 
 const manrope = Manrope({
   variable: '--font-manrope',
@@ -37,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${display.variable} antialiased`}
       >
+        <ThemeStyle />
         <CartProvider>{children}</CartProvider>
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'GiftMitra',url:process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000',logo:`${process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000'}/favicon.svg`}).replace(/</g,'\\u003c')}} />
       </body>

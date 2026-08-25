@@ -37,7 +37,9 @@ supabase db push
 supabase db reset
 ```
 
-The initial migration creates normalized commerce, CMS, RBAC, payments, reviews, hamper, audit and shipping-ready structures with foreign keys, checks, indexes, triggers and Row Level Security. The second migration creates the validated `giftmitra-media` Storage bucket.
+The initial migration creates normalized commerce, CMS, RBAC, payments, reviews, hamper, audit and shipping-ready structures with foreign keys, checks, indexes, triggers and Row Level Security. The second migration creates the validated `giftmitra-media` Storage bucket. The third migration is the requested admin/catalog upgrade: it adds full product content fields, no-code commerce/theme settings, 8 categories, **10 products per category (80 total)**, separate main/gallery image URLs, two homepage slider banners and starter FAQs.
+
+The ready-to-run catalog query is [`supabase/migrations/202608250003_catalog_admin_upgrade.sql`](supabase/migrations/202608250003_catalog_admin_upgrade.sql). Image sources and replaceable direct URLs are documented in [`docs/product-image-links.md`](docs/product-image-links.md).
 
 ## 4. Storage buckets
 

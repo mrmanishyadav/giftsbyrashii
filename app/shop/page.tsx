@@ -1,1 +1,1 @@
-import{CatalogPage}from'@/components/catalog-page';export const metadata={title:'Shop all gifts'};export default function Page(){return <CatalogPage/>}
+import{CatalogPage}from'@/components/catalog-page';export const metadata={title:'Shop all gifts'};export default async function Page({searchParams}:{searchParams:Promise<{maxPrice?:string;sort?:string}>}){const{maxPrice='',sort='featured'}=await searchParams;return <CatalogPage initialMaxPrice={maxPrice} initialSort={sort}/>}
