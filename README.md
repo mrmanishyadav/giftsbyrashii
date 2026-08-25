@@ -1,6 +1,6 @@
-# GiftMitra
+# GiftsByRashii
 
-GiftMitra is a production-oriented Indian gifting commerce platform built with Next.js App Router, React, strict TypeScript, Supabase, Razorpay, Zod, Motion and Tailwind CSS. It includes a CMS-driven storefront, customer accounts, secure checkout, admin operations, corporate gifting and an eight-step custom hamper builder.
+GiftsByRashii is a production-oriented Indian gifting commerce platform built with Next.js App Router, React, strict TypeScript, Supabase, Razorpay, Zod, Motion and Tailwind CSS. It includes a CMS-driven storefront, customer accounts, secure checkout, admin operations, corporate gifting and an eight-step custom hamper builder.
 
 ## 1. Prerequisites
 
@@ -100,7 +100,7 @@ https://YOUR_DOMAIN/api/webhooks/razorpay
 3. Subscribe to payment captured, payment failed and refund events.
 4. Set the same webhook signing secret as `RAZORPAY_WEBHOOK_SECRET`.
 
-The checkout route reads current product prices and stock from the database, creates a pending GiftMitra order, then creates the Razorpay Order server-side. `/api/payments/verify` uses timing-safe HMAC verification. The webhook is signature-verified and payment identifiers are unique for idempotency. A browser callback alone never marks an order paid.
+The checkout route reads current product prices and stock from the database, creates a pending GiftsByRashii order, then creates the Razorpay Order server-side. `/api/payments/verify` uses timing-safe HMAC verification. The webhook is signature-verified and payment identifiers are unique for idempotency. A browser callback alone never marks an order paid.
 
 ## 8. Local development and validation
 
@@ -113,7 +113,7 @@ npm run start
 
 Critical flows to verify with configured test credentials:
 
-- customer sign-up → email confirmation → login
+- customer sign-up → immediate secure login (no email confirmation link)
 - product → personalisation → cart → coupon → checkout
 - Razorpay test payment → signature verification → order timeline
 - custom hamper steps 1–8 → cart → order item configuration
@@ -150,4 +150,3 @@ Pricing, coupon eligibility, authorization, payment verification and inventory u
 - **Upload rejected** — use JPG, PNG, WebP, AVIF or MP4 under 20 MB and apply the storage migration.
 - **Product missing on storefront** — set `is_active`, stock, category relations and media in admin; verify RLS migrations ran.
 - **Auth callback rejected** — add the exact local and production origins to Supabase Auth URL configuration.
-# GiftMitra

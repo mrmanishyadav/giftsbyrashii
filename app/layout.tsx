@@ -24,10 +24,10 @@ const display = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
-  title: { default: 'GiftMitra — Gifts that feel made for them', template: '%s | GiftMitra' },
+  title: { default: 'GiftsByRashii — Gifts that feel made for them', template: '%s | GiftsByRashii' },
   description: 'Thoughtful gifts, personalised hampers and joyful surprises for every person and occasion.',
-  openGraph: { title: 'GiftMitra — Gifts that feel made for them', description: 'Thoughtful gifts, personalised hampers and joyful surprises for every person and occasion.', images: ['/og.png'], type: 'website' },
-  twitter: { card: 'summary_large_image', title: 'GiftMitra', description: 'Thoughtful gifts for every person and occasion.', images: ['/og.png'] },
+  openGraph: { title: 'GiftsByRashii — Gifts that feel made for them', description: 'Thoughtful gifts, personalised hampers and joyful surprises for every person and occasion.', images: ['/og.png'], type: 'website' },
+  twitter: { card: 'summary_large_image', title: 'GiftsByRashii', description: 'Thoughtful gifts for every person and occasion.', images: ['/og.png'] },
   icons: { icon: '/favicon.svg' },
   alternates: { canonical: '/' },
 };
@@ -44,7 +44,7 @@ export default function RootLayout({
       >
         <ThemeStyle />
         <CartProvider>{children}</CartProvider>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'GiftMitra',url:process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000',logo:`${process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000'}/favicon.svg`}).replace(/</g,'\\u003c')}} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'GiftsByRashii',url:process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000',logo:`${process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000'}/favicon.svg`}).replace(/</g,'\\u003c')}} />
       </body>
     </html>
   );

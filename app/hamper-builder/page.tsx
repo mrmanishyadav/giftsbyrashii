@@ -1,7 +1,7 @@
 import { HamperBuilder } from '@/components/hamper-builder';
 import { createAdminClient } from '@/lib/supabase/admin';
 
-export const metadata = { title: 'Build your own hamper', description: 'Create a one-of-a-kind GiftMitra hamper in eight thoughtful steps.' };
+export const metadata = { title: 'Build your own hamper', description: 'Create a one-of-a-kind GiftsByRashii hamper in eight thoughtful steps.' };
 
 export default async function Page() {
   const supabase = createAdminClient();

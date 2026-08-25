@@ -1,4 +1,4 @@
-# GiftMitra product image links
+# GiftsByRashii product image links
 
 The 80-product SQL migration uses optimized `images.unsplash.com` URLs and rotates three URLs per product: one main image plus two gallery images. Edit or replace any URL from **Products → Edit product** without touching code.
 

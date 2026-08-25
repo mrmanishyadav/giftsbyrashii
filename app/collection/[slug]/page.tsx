@@ -18,5 +18,5 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     (rules.maximumPrice === undefined || product.price <= Number(rules.maximumPrice)) &&
     (!rules.featuredOnly || product.badges.includes('Featured'))
   ));
-  return <CatalogPage title={data.name} description={data.description ?? 'A thoughtfully managed GiftMitra collection.'} initialProducts={managed} />;
+  return <CatalogPage title={data.name} description={data.description ?? 'A thoughtfully managed GiftsByRashii collection.'} initialProducts={managed} />;
 }

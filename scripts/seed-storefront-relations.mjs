@@ -46,7 +46,7 @@ const writes = [
   client.from('product_recipients').upsert(recipientRows, { onConflict: 'product_id,recipient_id' }),
   client.from('hamper_products').upsert(hamperRows, { onConflict: 'product_id' }),
   client.from('collections').upsert([
-    { name: 'Most-Loved Gifts', slug: 'most-loved', description: 'GiftMitra favourites customers return to.', rules: { tags: ['bestseller'] }, is_active: true },
+    { name: 'Most-Loved Gifts', slug: 'most-loved', description: 'GiftsByRashii favourites customers return to.', rules: { tags: ['bestseller'] }, is_active: true },
     { name: 'Personalised With Love', slug: 'personalised-with-love', description: 'Gifts that carry their name, photo or message.', rules: { tags: ['personalised'] }, is_active: true },
     { name: 'Little Joys Under 999', slug: 'under-999', description: 'Thoughtful gifting within a lovely budget.', rules: { maximumPrice: 999 }, is_active: true },
   ], { onConflict: 'slug' }),
@@ -62,7 +62,7 @@ const sections = [
   ['product_grid', 'This week’s most-loved gifts'], ['occasion_collection', 'Gifts for every beautiful reason'],
   ['price_collection', 'Find their joy, your way'], ['custom_hamper', 'A hamper as unique as they are.'],
   ['corporate_gifting', 'Make work feel a little more wonderful.'], ['testimonials', 'Notes that made us smile'],
-  ['usp', 'Why GiftMitra'], ['newsletter', 'Be the first to know what’s worth gifting.'],
+  ['usp', 'Why GiftsByRashii'], ['newsletter', 'Be the first to know what’s worth gifting.'],
 ].filter(([type]) => !existingTypes.has(type)).map(([section_type, title], sort_order) => ({ section_type, title, is_enabled: true, sort_order }));
 if (sections.length) {
   const inserted = await client.from('homepage_sections').insert(sections);

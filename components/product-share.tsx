@@ -6,7 +6,7 @@ import { useState } from 'react';
 export function ProductShare({ name }: { name: string }) {
   const [copied, setCopied] = useState(false);
   async function share() {
-    const data = { title: `${name} | GiftMitra`, text: `I found this lovely gift on GiftMitra: ${name}`, url: window.location.href };
+    const data = { title: `${name} | GiftsByRashii`, text: `I found this lovely gift on GiftsByRashii: ${name}`, url: window.location.href };
     try {
       if (navigator.share) await navigator.share(data);
       else { await navigator.clipboard.writeText(window.location.href); setCopied(true); window.setTimeout(() => setCopied(false), 1800); }
