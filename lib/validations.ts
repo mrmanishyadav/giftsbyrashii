@@ -1,0 +1,7 @@
+import {z} from 'zod';
+export const signupSchema=z.object({fullName:z.string().min(2).max(80),email:z.email(),mobile:z.string().regex(/^\+?[1-9]\d{9,14}$/),password:z.string().min(8).regex(/[A-Z]/).regex(/[0-9]/)});
+export const loginSchema=z.object({identifier:z.string().min(3),password:z.string().min(8)});
+export const addressSchema=z.object({name:z.string().min(2),mobile:z.string().regex(/^\+?[1-9]\d{9,14}$/),line1:z.string().min(5),line2:z.string().optional(),landmark:z.string().optional(),city:z.string().min(2),state:z.string().min(2),postalCode:z.string().regex(/^\d{6}$/),country:z.string().default('India'),type:z.enum(['home','work','other']).default('home')});
+export const checkoutSchema=z.object({items:z.array(z.object({productId:z.string(),quantity:z.number().int().min(1).max(20),personalization:z.record(z.string(),z.string()).optional()})).min(1),addressId:z.string().uuid(),couponCode:z.string().max(30).optional(),deliveryDate:z.string().optional(),paymentMethod:z.enum(['razorpay','cod'])});
+export const corporateSchema=z.object({company:z.string().min(2),contactPerson:z.string().min(2),email:z.email(),phone:z.string().min(10),quantity:z.coerce.number().int().positive(),budget:z.coerce.number().positive(),occasion:z.string().min(2),deliveryLocation:z.string().min(2),requirements:z.string().min(10).max(3000)});
+export const reviewSchema=z.object({productId:z.string().uuid(),rating:z.number().int().min(1).max(5),title:z.string().min(2).max(100),body:z.string().min(10).max(3000)});

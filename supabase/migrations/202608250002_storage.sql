@@ -1,0 +1,3 @@
+insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types) values('giftmitra-media','giftmitra-media',true,20971520,array['image/jpeg','image/png','image/webp','image/avif','video/mp4']) on conflict(id) do update set file_size_limit=excluded.file_size_limit,allowed_mime_types=excluded.allowed_mime_types;
+create policy "public giftmitra media" on storage.objects for select using(bucket_id='giftmitra-media');
+create policy "authenticated personalization upload" on storage.objects for insert to authenticated with check(bucket_id='giftmitra-media' and (storage.foldername(name))[1]='personalization' and owner_id=auth.uid()::text);

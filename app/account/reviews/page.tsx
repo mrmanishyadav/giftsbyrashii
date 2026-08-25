@@ -1,0 +1,1 @@
+import{Star}from'lucide-react';export default function Page(){return <><div className="account-heading"><span className="eyebrow">YOUR REVIEWS</span><h1>Share a gifting moment</h1></div><div className="mini-empty"><Star/><p>Eligible delivered gifts will appear here for verified reviews.</p></div></>}

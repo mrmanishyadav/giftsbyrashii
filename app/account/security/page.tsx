@@ -1,0 +1,1 @@
+export default function Page(){return <><div className="account-heading"><span className="eyebrow">SECURITY</span><h1>Password & account</h1></div><div className="account-panel"><h2>Change password</h2><p>Use a strong password you do not reuse elsewhere.</p><a href="/forgot-password" className="button button-primary">Send secure reset link</a></div></>}

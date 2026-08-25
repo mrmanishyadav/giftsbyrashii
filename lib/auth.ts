@@ -1,0 +1,3 @@
+import {redirect} from 'next/navigation';import {createClient} from './supabase/server';
+export async function requireUser(){const supabase=await createClient();if(!supabase)redirect('/login?notice=configuration-required');const{data}=await supabase.auth.getUser();if(!data.user)redirect('/login');return data.user;}
+export async function requireAdmin(){const user=await requireUser();const supabase=await createClient();const{data}=await supabase!.from('admin_users').select('id,user_id,is_active').eq('user_id',user.id).eq('is_active',true).maybeSingle();if(!data)redirect('/account?error=unauthorized');return{user,admin:data};}

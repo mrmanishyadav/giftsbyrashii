@@ -1,0 +1,1 @@
+import{CatalogPage}from'@/components/catalog-page';export default async function Page({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const title=slug.replaceAll('-',' ').replace(/\b\w/g,c=>c.toUpperCase());return <CatalogPage title={title} filter={{kind:'category',value:slug}}/>}

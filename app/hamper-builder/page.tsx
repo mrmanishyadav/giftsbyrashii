@@ -1,0 +1,1 @@
+import{HamperBuilder}from'@/components/hamper-builder';export const metadata={title:'Build your own hamper',description:'Create a one-of-a-kind GiftMitra hamper in eight thoughtful steps.'};export default function Page(){return <HamperBuilder/>}

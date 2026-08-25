@@ -1,0 +1,1 @@
+export default function Page(){return <><div className="account-heading"><span className="eyebrow">OFFERS</span><h1>Your coupons</h1></div><div className="coupon-card"><b>HELLO10</b><span>10% off your first eligible GiftMitra order</span><small>Validated securely at checkout</small></div></>}

@@ -1,0 +1,1 @@
+import{AdminProductForm}from'@/components/admin-product-form';export default function Page(){return <div className="admin-page"><div className="admin-title"><div><span>CATALOG</span><h1>Add product</h1><p>Complete each operational detail before publishing.</p></div></div><AdminProductForm/></div>}

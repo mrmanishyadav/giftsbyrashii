@@ -1,0 +1,1 @@
+import{CartPage}from'@/components/cart-page';import{StorefrontFrame}from'@/components/site-shell';export const metadata={title:'Your gift bag'};export default function Page(){return <StorefrontFrame><CartPage/></StorefrontFrame>}
