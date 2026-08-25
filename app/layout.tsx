@@ -10,6 +10,7 @@ import './json-free-ui.css';
 import './responsive.css';
 import { CartProvider } from '@/components/cart-provider';
 import { ThemeStyle } from '@/components/theme-style';
+import { getSiteUrl, getSiteUrlObject } from '@/lib/site-url';
 
 const manrope = Manrope({
   variable: '--font-manrope',
@@ -22,10 +23,11 @@ const display = Cormorant_Garamond({
   weight: ['500', '600', '700'],
 });
 
+const siteUrlObject = getSiteUrlObject();
+const siteUrlString = getSiteUrl();
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'http://localhost:3000'
-),
+  metadataBase: siteUrlObject,
   title: { default: 'GiftsByRashii — Gifts that feel made for them', template: '%s | GiftsByRashii' },
   description: 'Thoughtful gifts, personalised hampers and joyful surprises for every person and occasion.',
   openGraph: { title: 'GiftsByRashii — Gifts that feel made for them', description: 'Thoughtful gifts, personalised hampers and joyful surprises for every person and occasion.', images: ['/og.png'], type: 'website' },
@@ -46,7 +48,7 @@ export default function RootLayout({
       >
         <ThemeStyle />
         <CartProvider>{children}</CartProvider>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'GiftsByRashii',url:process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000',logo:`${process.env.NEXT_PUBLIC_SITE_URL??'http://localhost:3000'}/favicon.svg`}).replace(/</g,'\\u003c')}} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'GiftsByRashii',url:siteUrlString,logo:`${siteUrlString}/favicon.svg`}).replace(/</g,'\\u003c')}} />
       </body>
     </html>
   );
